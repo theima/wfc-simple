@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
     mode: 'development',
     devtool: 'eval-source-map',
@@ -30,6 +31,14 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./index.html"
         }),
+        new CopyWebpackPlugin({
+        patterns: [
+            {
+            from: 'src/assets',
+            to: 'assets'
+            }
+        ]
+        })
     ],
     target: "web",
     resolve: {
@@ -37,6 +46,7 @@ module.exports = {
     },
     output: {
         filename: 'dist.js',
-        path: path.resolve(__dirname, 'dist')
-    }
+        path: path.resolve(__dirname, 'dist'),
+        clean: true
+    },
 }

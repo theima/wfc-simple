@@ -21,9 +21,9 @@ var img_url_to_data = function(path:string, callback:any){
 var start = function(id: ImageData){
   let output = document.getElementById("output") as HTMLCanvasElement;
   let ctx = output.getContext("2d")
-  let imgData = ctx?.createImageData(48, 48)
+  let imgData = ctx?.createImageData(300, 200)
   // input, width, height, N, outputWidth, outputHeight, periodicInput, periodicOutput, symmetry, ground
-  let model = new wfc.OverlappingModel(id.data, id.width, id.height, 2, 48, 48, true, false, 1, 0)
+  let model = new wfc.OverlappingModel(id.data, id.width, id.height, 2, 300, 200, true, false, 1, 0)
   //seed, limit
   var success = model.generate(Math.random, 0)
   model.graphics(imgData?.data)
