@@ -1,0 +1,1 @@
+export type Symmetry =  'X' | 'T' | 'L' | 'I' | '\\';

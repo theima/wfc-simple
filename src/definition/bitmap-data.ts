@@ -1,0 +1,1 @@
+export type BitmapData = Uint8Array | Uint8Array[];
