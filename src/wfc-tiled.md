@@ -1,1 +1,0 @@
-They are rotations 90 degrees counterclockwise: 1 - 90 degree rotation, 2 - 180, 3 - 270 = -90.

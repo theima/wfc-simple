@@ -1,13 +1,13 @@
-"use strict";
+'use strict';
 
-function normalizeSeed (seed:number | string) {
+function normalizeSeed(seed: number | string) {
   if (typeof seed === 'number') {
     seed = Math.abs(seed);
   } else if (typeof seed === 'string') {
     const string = seed;
     seed = 0;
 
-    for(let i = 0; i < string.length; i++) {
+    for (let i = 0; i < string.length; i++) {
       seed = (seed + (i + 1) * (string.charCodeAt(i) % 96)) % 2147483647;
     }
   }
@@ -19,7 +19,7 @@ function normalizeSeed (seed:number | string) {
   return seed;
 }
 
-export function lcgRandom (seed:number | string) {
+export function lcgRandom(seed: number | string) {
   let state = normalizeSeed(seed);
 
   return function () {

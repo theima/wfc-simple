@@ -12,11 +12,24 @@
             border: 1px solid black;
             image-rendering: pixelated;
         }
+
+        button {
+            display: block;
+            margin-bottom: .5rem;
+        }
+
+        .wfc_info {
+            margin-top: 0;
+            color: #888;
+            font-size: 11px;
+        }
     </style>
 </head>
 
 <body>
-    <canvas id="output"></canvas>
+    <button id="wfc_generate">Generate</button>
+    <canvas id="wfc_output"></canvas>
+    <p class="wfc_info"><span id="wfc_seed"></span></p>
 </body>
 
 </html>
